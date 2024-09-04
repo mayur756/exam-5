@@ -27,13 +27,13 @@ app.post('/courses/add', (req, res) => {
 app.patch('/courses/update/:id', (req, res) => {
   const { id } = req.params;
   const updatedRecipe = req.body;
-  courses = courses.map(recipe => recipe.id === Number(id) ? { ...recipe, ...updatedRecipe } : recipe);
+  courses = courses.map(recipe => recipe.id ===(id) ? { ...recipe, ...updatedRecipe } : recipe);
   res.send(courses);
 })
 
 app.delete('/courses/delete/:id', (req, res) => {
   const { id } = req.params;
-  courses = courses.filter(recipe => recipe.id !== Number(id));
+  courses = courses.filter(recipe => recipe.id !== (id));
   res.send(courses);
 })
 app.get('/courses/filter', (req, res) => {
